@@ -1,0 +1,320 @@
+/* Marquee Box Centered at the Top */
+ .marquee-container {
+	position: absolute;
+        top: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 50%; /* Adjust width as needed */
+        overflow: hidden;
+        white-space: nowrap;
+        background: rgba(0, 0, 0, 0.8);
+        padding: 0.5px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 255, 255, 0.6);
+    }
+
+ .marquee-content {
+        display: inline-block;
+        white-space: nowrap;
+        animation: marquee 20s linear infinite; /* Slower Speed */
+        color: white;
+        font-size: 18px;
+    }
+
+ @keyframes marquee {
+        from { transform: translateX(100%); }
+        to { transform: translateX(-100%); }
+    }
+
+ .icon {
+        height: 20px;
+        vertical-align: middle;
+        margin-right: 5px;
+    }
+
+  a {
+        color: #00d1ff;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+  a:hover {
+        text-decoration: underline;
+    }
+
+
+/* 🎰 Casino Vibes: Fixed Buttons Container */
+ .fixed-buttons {
+    	position: fixed;
+    	top: 60px;
+    	left: 10px;
+    	display: flex; /* Hidden by default */
+    	flex-direction: column;
+    	gap: 2px;
+    	padding: 2px;
+    	border-radius: 8px;
+    	z-index: 9999;
+    }
+
+/* 🎰 Show menu when active */
+ .fixed-buttons.show {
+    	display: flex;
+    }
+
+/* 🎰 Casino-Style Buttons */
+ .fixed-buttons a {
+   	display: block;
+    	text-decoration: none;
+    	font-weight: bold;
+    	color: #fff;
+   	border: 2px solid rgba(255, 223, 0, 0.9); /* Gold Border */
+	background: linear-gradient(135deg, #ff0000, #ffcc00); /* Red to Gold */
+    	padding: 2px 2px;
+   	border-radius: 8px;
+   	text-align: center;
+    	text-transform: uppercase;
+    	letter-spacing: 1px;
+    	font-size: 12px;
+    	font-family: 'Arial Black', sans-serif; /* More casino-like */
+    	transition: all 0.3s ease-in-out;
+    	position: relative;
+    	box-shadow: 0 0 12px rgba(255, 0, 0, 0.8), 0 0 25px rgba(255, 223, 0, 0.6); /* Neon glow */
+    	top: 20px;
+    	width: 100%; /* Adjusts width relative to the screen */
+    }
+
+/* Apply different width on smaller screens */
+@media (max-width: 768px) {
+ .fixed-buttons a {
+   	top: 1px;
+        width: 100%; /* Expands slightly on mobile */
+        font-size: 6px;}
+    }
+
+
+/* 🎰 Hover Effect - Bigger, Brighter, Flashier */
+ .fixed-buttons a:hover {
+    	transform: scale(1.1);
+    	background: linear-gradient(135deg, #ffcc00, #ff0000); /* Reverse colors */
+    	box-shadow: 0 0 20px rgba(255, 223, 0, 0.9), 0 0 40px rgba(255, 0, 0, 0.8); /* More glow */
+    	letter-spacing: 2px;
+    	text-shadow: 0 0 10px #fff, 0 0 20px #ffcc00;
+    }
+
+/* 🎰 Active (Click) Effect */
+ .fixed-buttons a:active {
+    	transform: scale(0.98);
+    	background: linear-gradient(135deg, #ff8800, #ff2200);
+    	box-shadow: none;
+    }
+
+/* 🎰 Flashing Neon Glow Animation */
+ @keyframes neonGlow {
+    	0% { box-shadow: 0 0 10px rgba(255, 223, 0, 0.8); }
+    	50% { box-shadow: 0 0 20px rgba(255, 0, 0, 0.9); }
+    	100% { box-shadow: 0 0 10px rgba(255, 223, 0, 0.8); }
+    }
+
+/* 🎰 Apply the Neon Glow Animation */
+ .fixed-buttons a {
+    	animation: neonGlow 1.5s infinite alternate;
+    }
+
+/* 🎰 Casino Vibes: Menu Button */
+ .menu-button {
+    	background: linear-gradient(135deg, #ff0000, #ffcc00); /* Red to Gold */
+    	color: white;
+    	border: 2px solid rgba(255, 223, 0, 0.9); /* Gold Border */
+    	padding: 2px 2px;
+    	font-size: 12px;
+    	font-weight: bold;
+    	text-transform: uppercase;
+    	font-family: 'Arial Black', sans-serif; /* Casino Font */
+    	cursor: pointer;
+    	border-radius: 8px;
+    	position: fixed;
+    	top: 40px;
+    	left: 10px;
+    	z-index: 9999; /* Ensure it's on top */
+    	transition: all 0.3s ease-in-out;
+    	box-shadow: 0 0 12px rgba(255, 0, 0, 0.8), 0 0 25px rgba(255, 223, 0, 0.6); /* Neon glow */
+    	animation: neonGlow 1.5s infinite alternate;
+    	width: 5%; /* Adjusts width relative to the screen */
+    }
+
+/* Apply different width on smaller screens */
+@media (max-width: 768px) {
+ .menu-button {
+        width: 15%; /* Expands slightly on mobile */
+        font-size: 6px;}
+    }
+
+/* 🎰 Hover Effect - Flashier, Brighter */
+ .menu-button:hover {
+    	transform: scale(1.1);
+    	background: linear-gradient(135deg, #ffcc00, #ff0000); /* Reverse colors */
+    	box-shadow: 0 0 20px rgba(255, 223, 0, 0.9), 0 0 40px rgba(255, 0, 0, 0.8); /* More glow */
+    	text-shadow: 0 0 10px #fff, 0 0 20px #ffcc00;
+    }
+
+/* 🎰 Active (Click) Effect */
+ .menu-button:active {
+    	transform: scale(0.98);
+    	background: linear-gradient(135deg, #ff8800, #ff2200);
+    	box-shadow: none;
+    }
+
+/* 🎰 Flashing Neon Glow Animation */
+ @keyframes neonGlow {
+    	0% { box-shadow: 0 0 10px rgba(255, 223, 0, 0.8); }
+    	50% { box-shadow: 0 0 20px rgba(255, 0, 0, 0.9); }
+    	100% { box-shadow: 0 0 10px rgba(255, 223, 0, 0.8); }
+    }
+
+ .container {
+    	width: 90%; /* Adjust width to fit content */
+    	max-width: 800px; /* Prevent it from being too wide */
+    	margin: 0 auto; /* Centers the container */
+    	padding: 20px;
+    }
+
+ .toc {
+    	list-style-type: none; /* Removes default bullets */
+    	padding: 0;
+    	margin-left: 0; /* Ensures list starts from the left */
+    	text-align: left; /* Forces left alignment */
+    }
+
+ .toc li {
+    	margin-bottom: 10px; /* Adds spacing between list items */
+    }
+
+ .toc a {
+    	text-decoration: none; /* Removes underline */
+    	color: #00AEEF; /* Adjust the color */
+    	font-weight: bold;
+    }
+
+ .toc a:hover {
+    	text-decoration: underline; /* Adds underline effect on hover */
+    }
+
+ .logo-link {
+    	position: fixed; /* Keeps it in place */
+    	top: 10px;
+    	left: 10px;
+    	z-index: 1000; /* Ensures it stays above other content */
+    }
+
+ .logo {
+    	width: 20px;  /* Small size */
+    	height: 20px; /* Keeps it a perfect circle */
+    	border-radius: 50%;
+    	border: 2px solid #FFD700; /* Gold outline */
+    	box-shadow: 0 0 5px rgba(255, 215, 0, 0.8);
+    	object-fit: cover; /* Ensures image fits */
+    }
+
+ .logo:hover {
+    	transform: rotate(360deg);
+    }
+
+ html, body {
+    	height: 100%;
+    	margin: 0;
+    	padding: 0;
+    	display: flex;
+    	flex-direction: column;
+    }
+
+ .main-content {
+    	flex: 1; /* Pushes footer to the bottom when content is less */
+    }
+
+  footer {
+    	width: 100%;
+	text-align: center;
+    	margin-top: 30px;
+    	padding: 1px 0;
+    	background: rgba(34, 34, 34, 0.9);
+    	color: #fff;
+    	font-size: 14px; !important;
+    	border-top: 1px solid #00AEEF;
+    	white-space: nowrap;
+    	height: auto;
+    	position: relative;
+    	bottom: 0;
+    	left: 0;
+    	width: 100vw; /* Full viewport width */
+    	min-width: 100%; /* Ensure no gaps */
+    }
+
+
+ footer a {
+    	color: #00AEEF;
+    	text-decoration: none;
+    }
+
+ footer a:hover {
+    	text-decoration: underline;
+    }
+
+ footer p {
+    	margin: 0 5px; /* Adds a small space between elements */
+    	margin-left: 0;
+    }
+
+
+/* ✅ Mobile-Friendly Footer */
+ @media (max-width: 768px) {
+ footer {
+        font-size: 10px !important;
+        padding: 2px 1px; /* Adjust spacing */
+        text-align: center;
+        white-space: normal; /* Allow text wrapping */
+    	height: auto;
+    	position: relative;
+    	bottom: 0;
+    	left: -10%;
+    	width: 100%; /* Full viewport width */
+    	min-width: 110vw; /* Ensure no gaps */
+    }
+
+ footer p {
+        display: block; /* Stack text properly */
+        margin: 0px 0;
+    	margin-left: 10%;
+	text-align: center;
+    }
+
+ footer a {
+        display: inline-block;
+        font-size: 8px; /* Adjust link size */
+        margin: 0px 0px; /* Space between links */ }
+    }
+
+ .rank-badge {
+	background-color: #555;
+ 	color: white;
+	padding: 5px 10px;
+	border-radius: 8px;
+	font-weight: bold;
+    }
+	
+ .gold {
+	background: linear-gradient(135deg, #FFD700, #FFB300); /* Gold gradient */
+	color: black;
+	border: 1px solid #DAA520;
+    }
+
+ .silver {
+	background: linear-gradient(135deg, #C0C0C0, #A9A9A9); /* Silver gradient */
+	color: black;
+	border: 1px solid #808080;
+    }
+
+ .bronze {
+	background: linear-gradient(135deg, #CD7F32, #A45A2A); /* Bronze gradient */
+	color: white;
+	border: 1px solid #8B4513;
+    }
