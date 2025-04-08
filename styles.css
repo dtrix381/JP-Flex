@@ -1,320 +1,351 @@
 /* Marquee Box Centered at the Top */
- .marquee-container {
-	position: absolute;
-        top: 10px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 50%; /* Adjust width as needed */
-        overflow: hidden;
-        white-space: nowrap;
-        background: rgba(0, 0, 0, 0.8);
-        padding: 0.5px;
-        border-radius: 8px;
-        box-shadow: 0 0 10px rgba(0, 255, 255, 0.6);
-    }
+.marquee-container {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50%; /* Adjust width as needed */
+    overflow: hidden;
+    white-space: nowrap;
+    background: rgba(18, 255, 255, 0.8); /* Light cyan background */
+    padding: 0.5px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(18, 255, 255, 0.6);
+}
 
- .marquee-content {
-        display: inline-block;
-        white-space: nowrap;
-        animation: marquee 20s linear infinite; /* Slower Speed */
-        color: white;
-        font-size: 18px;
-    }
+.marquee-content {
+    display: inline-block;
+    white-space: nowrap;
+    animation: marquee 20s linear infinite; /* Slower Speed */
+    color: #960098; /* Purple color */
+    font-size: 18px;
+}
 
- @keyframes marquee {
-        from { transform: translateX(100%); }
-        to { transform: translateX(-100%); }
-    }
+@keyframes marquee {
+    from { transform: translateX(100%); }
+    to { transform: translateX(-100%); }
+}
 
- .icon {
-        height: 20px;
-        vertical-align: middle;
-        margin-right: 5px;
-    }
+.icon {
+    height: 20px;
+    vertical-align: middle;
+    margin-right: 5px;
+}
 
-  a {
-        color: #00d1ff;
-        text-decoration: none;
-        font-weight: bold;
-    }
+a {
+    color: #cc8ace; /* Light pink */
+    text-decoration: none;
+    font-weight: bold;
+}
 
-  a:hover {
-        text-decoration: underline;
-    }
+a:hover {
+    text-decoration: underline;
+}
+
 
 
 /* 🎰 Casino Vibes: Fixed Buttons Container */
- .fixed-buttons {
-    	position: fixed;
-    	top: 60px;
-    	left: 10px;
-    	display: flex; /* Hidden by default */
-    	flex-direction: column;
-    	gap: 2px;
-    	padding: 2px;
-    	border-radius: 8px;
-    	z-index: 9999;
-    }
+.fixed-buttons {
+    position: fixed;
+    top: 60px;
+    left: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: -20px;
+    z-index: 9999;
+}
 
-/* 🎰 Show menu when active */
- .fixed-buttons.show {
-    	display: flex;
-    }
+.fixed-buttons a {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    background: #960098;
+    color: #e1a033;
+    text-shadow: 0 0 3px #000000, 0 0 5px #00faff; /* Glow text for contrast */
+    text-decoration: none;
+    border-radius: 5px;
+    border: 2px solid #12ffff;
+    font-family: 'Arial Black', sans-serif;
+    font-size: 9.5px;
+    font-weight: bold;
+    transform: rotate(45deg);
+    box-shadow: 0 4px 15px rgba(0, 97, 129, 0.4), 0 0 30px rgba(18, 255, 255, 0.3);
+    transition: all 0.3s ease-in-out;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 15px;
+    margin-bottom: 1px;
+}
 
-/* 🎰 Casino-Style Buttons */
- .fixed-buttons a {
-   	display: block;
-    	text-decoration: none;
-    	font-weight: bold;
-    	color: #fff;
-   	border: 2px solid rgba(255, 223, 0, 0.9); /* Gold Border */
-	background: linear-gradient(135deg, #ff0000, #ffcc00); /* Red to Gold */
-    	padding: 2px 2px;
-   	border-radius: 8px;
-   	text-align: center;
-    	text-transform: uppercase;
-    	letter-spacing: 1px;
-    	font-size: 12px;
-    	font-family: 'Arial Black', sans-serif; /* More casino-like */
-    	transition: all 0.3s ease-in-out;
-    	position: relative;
-    	box-shadow: 0 0 12px rgba(255, 0, 0, 0.8), 0 0 25px rgba(255, 223, 0, 0.6); /* Neon glow */
-    	top: 20px;
-    	width: 100%; /* Adjusts width relative to the screen */
-    }
+.fixed-buttons a span {
+    display: flex;
+    flex-direction: column; /* Default: stacked vertically */
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    transform: rotate(-45deg);
+    transition: all 0.3s ease-in-out;
+    text-align: center;
+    line-height: 1.1;
+    white-space: pre-line;
+}
+/* 🎰 Animated Neon Border */
+.fixed-buttons a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #12ffff, #6ad1d5);
+    background-size: 400% 400%;
+    animation: glowing 3s ease-in-out infinite;
+    z-index: -1;
+    border-radius: 10px;
+}
 
-/* Apply different width on smaller screens */
+/* Hover to square */
+.fixed-buttons a:hover {
+    transform: rotate(0deg);
+    background: #12ffff;
+    box-shadow: 0 8px 20px rgba(0, 97, 129, 0.5), 0 0 50px rgba(18, 255, 255, 0.4);
+    background-color: #960098;
+    color: black;
+}
+
+/* On hover, flip to horizontal layout */
+.fixed-buttons a:hover span {
+    flex-direction: row; /* Now text goes horizontal */
+}
+
+/* Active effect */
+.fixed-buttons a:active {
+    transform: rotate(45deg);
+    background: #006181;
+    box-shadow: none;
+}
+
+/* 🎰 Neon Border Animation */
+@keyframes glowing {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
 @media (max-width: 768px) {
- .fixed-buttons a {
-   	top: 1px;
-        width: 100%; /* Expands slightly on mobile */
-        font-size: 6px;}
+    .fixed-buttons {
+        top: 20px;
+        left: 10px;
+        gap: 1px; /* override -20px (which is invalid) */
     }
 
-
-/* 🎰 Hover Effect - Bigger, Brighter, Flashier */
- .fixed-buttons a:hover {
-    	transform: scale(1.1);
-    	background: linear-gradient(135deg, #ffcc00, #ff0000); /* Reverse colors */
-    	box-shadow: 0 0 20px rgba(255, 223, 0, 0.9), 0 0 40px rgba(255, 0, 0, 0.8); /* More glow */
-    	letter-spacing: 2px;
-    	text-shadow: 0 0 10px #fff, 0 0 20px #ffcc00;
+    .fixed-buttons a {
+        width: 45px;
+        height: 45px;
+        font-size: 8px;
+        padding: 8px 12px;
+        transform: rotate(45deg);
+        box-shadow: 0 3px 10px rgba(0, 97, 129, 0.3), 0 0 20px rgba(18, 255, 255, 0.25);
     }
 
-/* 🎰 Active (Click) Effect */
- .fixed-buttons a:active {
-    	transform: scale(0.98);
-    	background: linear-gradient(135deg, #ff8800, #ff2200);
-    	box-shadow: none;
+    .fixed-buttons a span {
+        font-size: 7px;
+        line-height: 1.1;
     }
 
-/* 🎰 Flashing Neon Glow Animation */
- @keyframes neonGlow {
-    	0% { box-shadow: 0 0 10px rgba(255, 223, 0, 0.8); }
-    	50% { box-shadow: 0 0 20px rgba(255, 0, 0, 0.9); }
-    	100% { box-shadow: 0 0 10px rgba(255, 223, 0, 0.8); }
+    .fixed-buttons a:hover {
+        transform: rotate(0deg);
     }
 
-/* 🎰 Apply the Neon Glow Animation */
- .fixed-buttons a {
-    	animation: neonGlow 1.5s infinite alternate;
+    .fixed-buttons a:active {
+        transform: rotate(45deg);
     }
+}
+
+
 
 /* 🎰 Casino Vibes: Menu Button */
- .menu-button {
-    	background: linear-gradient(135deg, #ff0000, #ffcc00); /* Red to Gold */
-    	color: white;
-    	border: 2px solid rgba(255, 223, 0, 0.9); /* Gold Border */
-    	padding: 2px 2px;
-    	font-size: 12px;
-    	font-weight: bold;
-    	text-transform: uppercase;
-    	font-family: 'Arial Black', sans-serif; /* Casino Font */
-    	cursor: pointer;
-    	border-radius: 8px;
-    	position: fixed;
-    	top: 40px;
-    	left: 10px;
-    	z-index: 9999; /* Ensure it's on top */
-    	transition: all 0.3s ease-in-out;
-    	box-shadow: 0 0 12px rgba(255, 0, 0, 0.8), 0 0 25px rgba(255, 223, 0, 0.6); /* Neon glow */
-    	animation: neonGlow 1.5s infinite alternate;
-    	width: 5%; /* Adjusts width relative to the screen */
-    }
+.menu-button {
+    background: linear-gradient(135deg, #12ffff, #6ad1d5); /* Light cyan to teal */
+    color: white;
+    border: 2px solid rgba(225, 160, 51, 0.9); /* Gold Border */
+    padding: 2px 2px;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: 'Arial Black', sans-serif; /* Casino Font */
+    cursor: pointer;
+    border-radius: 8px;
+    position: fixed;
+    top: 40px;
+    left: 10px;
+    z-index: 9999; /* Ensure it's on top */
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 0 12px rgba(18, 255, 255, 0.8), 0 0 25px rgba(225, 160, 51, 0.6); /* Neon glow */
+    animation: neonGlow 1.5s infinite alternate;
+    width: 5%; /* Adjusts width relative to the screen */
+}
 
 /* Apply different width on smaller screens */
 @media (max-width: 768px) {
- .menu-button {
+    .menu-button {
         width: 15%; /* Expands slightly on mobile */
-        font-size: 6px;}
+        font-size: 6px;
     }
+}
 
 /* 🎰 Hover Effect - Flashier, Brighter */
- .menu-button:hover {
-    	transform: scale(1.1);
-    	background: linear-gradient(135deg, #ffcc00, #ff0000); /* Reverse colors */
-    	box-shadow: 0 0 20px rgba(255, 223, 0, 0.9), 0 0 40px rgba(255, 0, 0, 0.8); /* More glow */
-    	text-shadow: 0 0 10px #fff, 0 0 20px #ffcc00;
-    }
+.menu-button:hover {
+    transform: scale(1.1);
+    background: linear-gradient(135deg, #6ad1d5, #12ffff); /* Reverse colors */
+    box-shadow: 0 0 20px rgba(225, 160, 51, 0.9), 0 0 40px rgba(18, 255, 255, 0.8); /* More glow */
+    text-shadow: 0 0 10px #fff, 0 0 20px #6ad1d5;
+}
 
 /* 🎰 Active (Click) Effect */
- .menu-button:active {
-    	transform: scale(0.98);
-    	background: linear-gradient(135deg, #ff8800, #ff2200);
-    	box-shadow: none;
-    }
+.menu-button:active {
+    transform: scale(0.98);
+    background: linear-gradient(135deg, #006181, #cc8ace);
+    box-shadow: none;
+}
 
 /* 🎰 Flashing Neon Glow Animation */
- @keyframes neonGlow {
-    	0% { box-shadow: 0 0 10px rgba(255, 223, 0, 0.8); }
-    	50% { box-shadow: 0 0 20px rgba(255, 0, 0, 0.9); }
-    	100% { box-shadow: 0 0 10px rgba(255, 223, 0, 0.8); }
-    }
+@keyframes neonGlow {
+    0% { box-shadow: 0 0 10px rgba(18, 255, 255, 0.8); }
+    50% { box-shadow: 0 0 20px rgba(225, 160, 51, 0.9); }
+    100% { box-shadow: 0 0 10px rgba(18, 255, 255, 0.8); }
+}
 
- .container {
-    	width: 90%; /* Adjust width to fit content */
-    	max-width: 800px; /* Prevent it from being too wide */
-    	margin: 0 auto; /* Centers the container */
-    	padding: 20px;
-    }
+.menu-button {
+    animation: neonGlow 1.5s infinite alternate;
+}
 
- .toc {
-    	list-style-type: none; /* Removes default bullets */
-    	padding: 0;
-    	margin-left: 0; /* Ensures list starts from the left */
-    	text-align: left; /* Forces left alignment */
-    }
+.container {
+    width: 90%; /* Adjust width to fit content */
+    max-width: 800px; /* Prevent it from being too wide */
+    margin: 0 auto; /* Centers the container */
+    padding: 20px;
+}
 
- .toc li {
-    	margin-bottom: 10px; /* Adds spacing between list items */
-    }
+.toc {
+    list-style-type: none; /* Removes default bullets */
+    padding: 0;
+    margin-left: 0; /* Ensures list starts from the left */
+    text-align: left; /* Forces left alignment */
+}
 
- .toc a {
-    	text-decoration: none; /* Removes underline */
-    	color: #00AEEF; /* Adjust the color */
-    	font-weight: bold;
-    }
+.toc li {
+    margin-bottom: 10px; /* Adds spacing between list items */
+}
 
- .toc a:hover {
-    	text-decoration: underline; /* Adds underline effect on hover */
-    }
+.toc a {
+    text-decoration: none; /* Removes underline */
+    color: #12ffff; /* Light cyan */
+    font-weight: bold;
+}
 
- .logo-link {
-    	position: fixed; /* Keeps it in place */
-    	top: 10px;
-    	left: 10px;
-    	z-index: 1000; /* Ensures it stays above other content */
-    }
+.toc a:hover {
+    text-decoration: underline; /* Adds underline effect on hover */
+}
 
- .logo {
-    	width: 20px;  /* Small size */
-    	height: 20px; /* Keeps it a perfect circle */
-    	border-radius: 50%;
-    	border: 2px solid #FFD700; /* Gold outline */
-    	box-shadow: 0 0 5px rgba(255, 215, 0, 0.8);
-    	object-fit: cover; /* Ensures image fits */
-    }
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
 
- .logo:hover {
-    	transform: rotate(360deg);
-    }
+.main-content {
+    flex: 1; /* Pushes footer to the bottom when content is less */
+}
 
- html, body {
-    	height: 100%;
-    	margin: 0;
-    	padding: 0;
-    	display: flex;
-    	flex-direction: column;
-    }
+footer {
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+    padding: 1px 0;
+    background: rgba(34, 34, 34, 0.9);
+    color: #fff;
+    font-size: 14px !important;
+    border-top: 1px solid #12ffff;
+    white-space: nowrap;
+    height: auto;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    width: 100vw; /* Full viewport width */
+    min-width: 100%; /* Ensure no gaps */
+}
 
- .main-content {
-    	flex: 1; /* Pushes footer to the bottom when content is less */
-    }
+footer a {
+    color: #12ffff;
+    text-decoration: none;
+}
 
-  footer {
-    	width: 100%;
-	text-align: center;
-    	margin-top: 30px;
-    	padding: 1px 0;
-    	background: rgba(34, 34, 34, 0.9);
-    	color: #fff;
-    	font-size: 14px; !important;
-    	border-top: 1px solid #00AEEF;
-    	white-space: nowrap;
-    	height: auto;
-    	position: relative;
-    	bottom: 0;
-    	left: 0;
-    	width: 100vw; /* Full viewport width */
-    	min-width: 100%; /* Ensure no gaps */
-    }
+footer a:hover {
+    text-decoration: underline;
+}
 
-
- footer a {
-    	color: #00AEEF;
-    	text-decoration: none;
-    }
-
- footer a:hover {
-    	text-decoration: underline;
-    }
-
- footer p {
-    	margin: 0 5px; /* Adds a small space between elements */
-    	margin-left: 0;
-    }
-
+footer p {
+    margin: 0 5px; /* Adds a small space between elements */
+    margin-left: 0;
+}
 
 /* ✅ Mobile-Friendly Footer */
- @media (max-width: 768px) {
- footer {
+@media (max-width: 768px) {
+    footer {
         font-size: 10px !important;
         padding: 2px 1px; /* Adjust spacing */
         text-align: center;
         white-space: normal; /* Allow text wrapping */
-    	height: auto;
-    	position: relative;
-    	bottom: 0;
-    	left: -10%;
-    	width: 100%; /* Full viewport width */
-    	min-width: 110vw; /* Ensure no gaps */
+        height: auto;
+        position: relative;
+        bottom: 0;
+        left: -10%;
+        width: 100%; /* Full viewport width */
+        min-width: 110vw; /* Ensure no gaps */
     }
 
- footer p {
+    footer p {
         display: block; /* Stack text properly */
         margin: 0px 0;
-    	margin-left: 10%;
-	text-align: center;
+        margin-left: 10%;
+        text-align: center;
     }
 
- footer a {
+    footer a {
         display: inline-block;
         font-size: 8px; /* Adjust link size */
-        margin: 0px 0px; /* Space between links */ }
+        margin: 0px 0px; /* Space between links */
     }
+}
 
- .rank-badge {
-	background-color: #555;
- 	color: white;
-	padding: 5px 10px;
-	border-radius: 8px;
-	font-weight: bold;
-    }
-	
- .gold {
-	background: linear-gradient(135deg, #FFD700, #FFB300); /* Gold gradient */
-	color: black;
-	border: 1px solid #DAA520;
-    }
+.rank-badge {
+    background-color: #006181; /* Dark teal */
+    color: white;
+    padding: 5px 10px;
+    border-radius: 8px;
+    font-weight: bold;
+}
 
- .silver {
-	background: linear-gradient(135deg, #C0C0C0, #A9A9A9); /* Silver gradient */
-	color: black;
-	border: 1px solid #808080;
-    }
+.gold {
+    background: linear-gradient(135deg, #FFD700, #FFB300); /* Gold gradient */
+    color: black;
+    border: 1px solid #DAA520;
+}
 
- .bronze {
-	background: linear-gradient(135deg, #CD7F32, #A45A2A); /* Bronze gradient */
-	color: white;
-	border: 1px solid #8B4513;
-    }
+.silver {
+    background: linear-gradient(135deg, #C0C0C0, #A9A9A9); /* Silver gradient */
+    color: black;
+    border: 1px solid #808080;
+}
+
+.bronze {
+    background: linear-gradient(135deg, #CD7F32, #A45A2A); /* Bronze gradient */
+    color: white;
+    border: 1px solid #8B4513;
+}
