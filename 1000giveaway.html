@@ -17,20 +17,14 @@
 	    		min-height: 100vh; /* Ensures full viewport height */
 		}
 	
-    		@media (max-width: 768px) { 
-    		body {
-        		background: url('Assets/jpflex.gif') no-repeat;
-        		background-size: auto 100vh; /* Ensures full height */
-        		background-color: black; /* Fallback color */
-        		background-repeat: repeat-y; /* Enables vertical repeat */
-        		animation: backgroundLoop 15s linear infinite; /* Animation duration */
-    		}
 
-   	 	@keyframes backgroundLoop {
-        		0% { background-position: 100% center; }
-        		50% { background-position: 0% center; }
-        		100% { background-position: 100% center; } }
-		}
+        @media (max-width: 768px) {
+    body {
+        background: url('Assets/jpflex.gif') no-repeat;
+        background-size: auto 100vh; /* Full height, auto width */
+        background-position: -520px center; /* Shift image 30px to the left */
+    }
+}
 
 		.container {
 	    		margin-top: 70px;
@@ -249,7 +243,7 @@
     <div class="fixed-buttons">
         <a href="index.html"><span>𝐇𝐨𝐦𝐞</span></a>
         <a href="1000giveaway.html"><span>𝐋𝐞𝐚𝐝𝐞𝐫𝐛𝐨𝐚𝐫𝐝</span></a>
-        <a href="1000giveaway.html"><span>𝐆𝐢𝐫𝐥𝐬 𝐯𝐬 𝐁𝐨𝐲𝐬</span></a>
+        <a href="girlsvsboys.html"><span>𝐆𝐢𝐫𝐥𝐬 𝐯𝐬 𝐁𝐨𝐲𝐬</span></a>
     </div>
 	
     <!-- ArcticBets Deposit Event Leaderboard -->
