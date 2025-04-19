@@ -9,7 +9,7 @@
 
     <style>
         body {
-            background: url('Assets/jpflex.gif') no-repeat center center fixed;
+            background: url('Assets/background3.jpg') no-repeat center center fixed;
             background-size: cover;
             background-color: black; /* Fallback color */
             color: white;
@@ -23,11 +23,12 @@
 
         @media (max-width: 768px) {
     body {
-        background: url('Assets/jpflex.gif') no-repeat;
+        background: url('Assets/background3.jpg') no-repeat;
         background-size: auto 100vh; /* Full height, auto width */
         background-position: -520px center; /* Shift image 30px to the left */
     }
 }
+
 
 /* Popup styles */
 .popup-overlay {
@@ -156,80 +157,11 @@
     }
 }
 
-
-        /* Profile Section */
-        .profile-section {
-            text-align: center;
-            margin-top: 50px;
-        }
-
-       .profile-image {
-    width: 100px;
-    height: 100px;
-    clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);
-    border: 4px solid #960098; /* Keep the yellow border */
-    box-shadow: 0 0 15px rgba(255, 215, 0, 0.8);
-    transition: transform 0.5s ease-in-out;
-}
-
-.profile-image:hover {
-    transform: rotate(360deg);
-}
-
-
-@import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
-
-.profile-name {
-    font-family: 'Bangers', sans-serif;
-    font-size: 50px;
-    color: #ff3366;
-    text-align: center;
-    text-transform: uppercase;
-    letter-spacing: 4px;
-    text-shadow: 0 4px 6px rgba(0, 0, 0, 0.6);
-    animation: bounce 1s ease infinite alternate;
-}
-
-/* Animation for bouncing effect */
-@keyframes bounce {
-    0% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
-    100% { transform: translateY(0); }
-}
-
-
-        .profile-text {
-            font-size: 20px;
-            text-align: center;
-            color: #aaa;
-        }
-
-        /* Adjustments for Mobile */
-        @media (max-width: 768px) {
-    .profile-name {
-        width: 250px;
-        height: 250px;
-        margin: 0 auto; /* horizontally center if using block display */
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-    }
-}
-
-            .profile-image {
-                width: 75px;
-            }
-
-            .profile-text {
-                font-size: 12px;
-            }
-        }
-
     </style>
 
 </head>
 <body>
+ 
 
     <!-- Age Verification Popup -->
     <div id="age-popup" class="popup-overlay">
@@ -272,123 +204,128 @@
   });
 </script>
 
+<style>
+
+/* Outer Box */
+.outer-box {
+    border: 3px solid #39ff14;
+    border-radius: 30px;
+    padding: 30px;
+    width: 600px;
+    height: auto;
+    margin: auto;
+    text-align: center;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Profile Image */
+.profile-logo {
+    width: 175px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+/* Discord Button Style (separated) */
+.discord-button {
+    margin-bottom: 30px;
+}
+.link-btn.discord {
+    background-color: #5865F2;
+    padding: 12px 28px;
+    font-size: 18px;
+}
+
+.button-row {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.link-btn.telegram {
+    background-color: #0088cc; /* Telegram Blue */
+    color: white;
+    padding: 12px 28px;
+    font-size: 18px;
+    text-decoration: none;
+    font-family: 'Bangers', sans-serif;
+    transition: background-color 0.3s ease;
+}
+
+.link-btn.telegram:hover {
+    background-color: #006faa;
+}
 
 
-    <!-- Profile Section -->
-    <div class="profile-section">
-        <h1 class="profile-name"><img src="Assets/logo.png" alt="JP_flex Logo" class="profile-name"></h1>
+/* Other Buttons in Column */
+.link-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
 
+/* Shared Button Style */
+.link-btn {
+    text-decoration: none;
+    background-color: #39ff14;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 20px;
+    transition: 0.3s ease;
+}
+.link-btn:hover {
+    background-color: black;
+    border: 3px solid #39ff14;
+}
+
+/* Make MERCH/CASINO/SOCIAL bigger */
+.link-btn.large {
+    padding: 18px 40px;
+    font-size: 22px;
+}
+
+
+</style>
+
+<!-- Big Outer Container Box -->
+<div class="outer-box">
+
+    <!-- Profile Image -->
+    <div class="profile-box">
+        <img src="Assets/Chosef.png" alt="JP_flex Logo" class="profile-logo">
     </div>
 
-    <!-- Fixed Buttons -->
-    <div class="fixed-buttons">
-        <a href="/1000giveaway/"><span>$𝟏𝟎𝟎𝟎 𝐆𝐢𝐯𝐞𝐚𝐰𝐚𝐲</span></a>
-        <a href="/"><span>𝐋𝐞𝐚𝐝𝐞𝐫𝐛𝐨𝐚𝐫𝐝</span></a>
-        <a href="/girlsvsboys/"><span>𝐆𝐢𝐫𝐥𝐬 𝐯𝐬 𝐁𝐨𝐲𝐬</span></a>
+    <!-- Discord and Telegram Buttons Side-by-Side -->
+    <div class="button-row">
+        <a href="https://discord.gg/PUkfEKfp2r" class="link-btn discord" target="_blank" rel="noopener noreferrer">DISCORD</a>
+        <a href="https://t.me/JP_FLEX" class="link-btn telegram" target="_blank" rel="noopener noreferrer">TELEGRAM</a>
     </div>
 
+    <!-- Other Buttons -->
+    <div class="link-buttons">
+        <a href="/JP-Flex/Merch/" class="link-btn large">MERCH</a>
+        <a href="https://your-casino-link.com" class="link-btn large">CASINO LINK</a>
+        <a href="https://your-social-link.com" class="link-btn large">SOCIAL LINK</a>
+    </div>
 
-
-<div id="clip-container" style="
-  width: 100%;
-  max-width: 500px;
-  margin: 20px auto;
-  background: #0f0f0f;
-  border: 2px solid #00ff88;
-  border-radius: 16px;
-  box-shadow: 0 0 20px #00ff88aa;
-  font-family: 'Segoe UI', sans-serif;
-  position: relative;
-  overflow: hidden;
-">
-  <!-- Container Header with Image -->
-  <div id="clip-header" style="background-color: #333; text-align: center;">
-    <img src="Assets/clip-header.jpg" alt="Clip Header Image" style="
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 8px;
-    ">
-  </div>
-
-  <!-- Clip Info -->
-  <div id="clip-info" style="padding: 15px; color: #fff; text-align: center;">
-    <p id="slot-info" style="font-size: 20px; font-weight: bold; color: #ffffff;">Slot: </p>
-    <p style="font-size: 16px;">
-      <span style="color: #ffd700; font-weight: bold;" id="bet-size-info"></span> 
-      <span class="separator" style="color: #555;">|</span>
-      <span style="color: #00bfff; font-weight: bold;" id="total-x-info"></span> 
-      <span class="separator" style="color: #555;">|</span>
-      <span style="color: #00ff88; font-weight: bold;" id="total-pay-info"></span>
-    </p>
-  </div>
-
-  <!-- Clip Video -->
-  <div id="clip-video" style="padding: 10px; text-align: center;">
-    <video
-      id="clip-player"
-      width="100%"
-      height="300"
-      controls
-      playsinline
-      style="border-radius: 8px; background: #000;"
-    >
-      <source id="clip-source" src="" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-  </div>
-
-  <!-- Navigation Arrows -->
-  <div style="position: absolute; top: 50%; transform: translateY(-50%); left: 10px; cursor: pointer; font-size: 28px; color: #00ff88;" onclick="changeClip(-1)">
-    &#8592;
-  </div>
-  <div style="position: absolute; top: 50%; transform: translateY(-50%); right: 10px; cursor: pointer; font-size: 28px; color: #00ff88;" onclick="changeClip(1)">
-    &#8594;
-  </div>
 </div>
 
-<script>
-  const clips = [
-    {
-      videoSrc: "Assets/clip001.mp4",
-      slot: "Jewel Rush",
-      betSize: "$0.40",
-      totalX: "3,202.8x",
-      totalPay: "$1,281.12"
-    }
-  ];
 
-  let currentClipIndex = 0;
 
-  function updateClipInfo(index) {
-    const clip = clips[index];
-    document.getElementById('slot-info').textContent = `Slot: ${clip.slot}`;
-    document.getElementById('bet-size-info').textContent = `Bet Size: ${clip.betSize}`;
-    document.getElementById('total-x-info').textContent = `Total X: ${clip.totalX}`;
-    document.getElementById('total-pay-info').textContent = `Total Pay: ${clip.totalPay}`;
-
-    const video = document.getElementById("clip-player");
-    const source = document.getElementById("clip-source");
-    source.src = clip.videoSrc;
-    video.load();
-  }
-
-  function changeClip(direction) {
-    currentClipIndex = (currentClipIndex + direction + clips.length) % clips.length;
-    updateClipInfo(currentClipIndex);
-  }
-
-  // Load the first clip initially
-  updateClipInfo(currentClipIndex);
-</script>
 
 
 
 
 
 </body>
-<footer>
-	<p>&copy; 2025 𝐉𝐏-𝐅𝐋𝐄𝐗.𝐜𝐨𝐦‌. All rights reserved.</p>
+<footer style="text-align: center; padding: 20px; background-color: rgba(0, 0, 0, 0.5); color: #39ff14;">
+    <!-- Footer Image -->
+    <img src="Assets/footer.png" alt="Footer Logo" style="max-width: 150px;">
+
+    <!-- Footer Text -->
+    <p>&copy; 2025 𝐉𝐏-𝐅𝐋𝐄𝐗.𝐜𝐨𝐦‌. All rights reserved.</p>
 </footer>
 
 
