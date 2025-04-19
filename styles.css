@@ -271,7 +271,6 @@ footer {
     background: rgba(34, 34, 34, 0.9);
     color: #fff;
     font-size: 14px !important;
-    border-top: 1px solid #12ffff;
     white-space: nowrap;
     height: auto;
     position: relative;
@@ -282,7 +281,6 @@ footer {
 }
 
 footer a {
-    color: #12ffff;
     text-decoration: none;
 }
 
