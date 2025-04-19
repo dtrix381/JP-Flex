@@ -176,7 +176,6 @@
     </div>
 </div>
 
-<audio id="entry-audio" src="Assets/intro.mp3" preload="auto"></audio>
 
 <script>
   const ageCheck = document.getElementById("age-check");
@@ -197,10 +196,6 @@
     agePopup.style.display = "none";
     sessionStorage.setItem("ageVerified", "true"); // ✅ Save to sessionStorage
 
-    // ✅ Play MP3 after user proceeds
-    entryAudio.play().catch(error => {
-      console.log("Autoplay was blocked. User interaction required:", error);
-    });
   });
 </script>
 
@@ -305,7 +300,7 @@
 
     <!-- Other Buttons -->
     <div class="link-buttons">
-        <a href="/Merch/" class="link-btn large">MERCH</a>
+        <a href="/JP-Flex/Merch/" class="link-btn large">MERCH</a>
         <a href="https://your-casino-link.com" class="link-btn large">CASINO LINK</a>
         <a href="https://your-social-link.com" class="link-btn large">SOCIAL LINK</a>
     </div>
@@ -330,4 +325,3 @@
 
 
 </html>
-
