@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JP_Flex</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css"> <!-- Link to your global styles -->
+
+    <style>
+        body {
+            background: url('../Assets/background.png') no-repeat center center fixed;
+            background-size: cover;
+            background-color: black; /* Fallback color */
+            color: white;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        @media (max-width: 768px) {
+    body {
+        background: url('../Assets/background.png') no-repeat;
+        background-size: auto 100vh; /* Full height, auto width */
+        background-position: -520px center; /* Shift image 30px to the left */
+    }
+}
+
+    </style>
+
+</head>
+<body>
+
+<style>
+/* Outer Box */
+.outer-box {
+    border: 3px solid #39ff14;
+    border-radius: 30px;
+    padding: 15px;
+    width: 600px;
+    margin: auto;
+    margin-top: 30px;
+    text-align: center;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.social-box {
+    font-family: 'Bangers', sans-serif;
+    font-size: 48px;
+    color: #ffffff;
+    background: linear-gradient(145deg, #4e2a84, #7c4cc3);  /* Purple gradient background */
+    border: 3px solid #7c4cc3;  /* Matching border color */
+    border-radius: 40px;  /* Rounded corners */
+    padding: 20px 50px;
+    text-align: center;
+    margin: 20px auto;
+    width: fit-content;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+    position: relative;
+    overflow: hidden;
+    z-index: 0;
+    transition: all 0.3s ease;  /* Smooth transition */
+}
+
+.social-box::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: rgba(255, 255, 255, 0.1);
+    transform: rotate(45deg);
+    z-index: -1;
+    animation: spin 3s linear infinite;
+}
+
+.social-box:hover {
+    transform: translateY(-5px);  /* Slight lift effect on hover */
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.6);  /* Stronger shadow on hover */
+}
+
+@keyframes spin {
+    0% { transform: rotate(45deg); }
+    50% { transform: rotate(135deg); }
+    100% { transform: rotate(225deg); }
+}
+
+/* Other Buttons in Column */
+.link-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Shared Button Style */
+.link-btn {
+    text-decoration: none;
+    background-color: #39ff14;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 20px;
+    transition: 0.3s ease;
+}
+.link-btn:hover {
+    background-color: black;
+    border: 3px solid #39ff14;
+}
+
+/* Make MERCH/CASINO/SOCIAL bigger */
+.link-btn.large {
+    padding: 18px 40px;
+    font-size: 22px;
+}
+</style>
+
+<!-- Big Outer Container Box -->
+<div class="outer-box">
+
+    <!-- Casino Text Box (Replacing Image) -->
+    <div class="social-box">
+        SOCIAL LINKS
+    </div>
+
+    <!-- Other Buttons -->
+    <div class="link-buttons">
+        <a href="https://kick.com/jp-flex" class="link-btn large" target="_blank" rel="noopener noreferrer">KICK</a>
+        <a href="https://www.instagram.com/_jpflex" class="link-btn large" target="_blank" rel="noopener noreferrer">INSTAGRAM</a>
+        <a href="https://www.youtube.com/@JP_flexx" class="link-btn large" target="_blank" rel="noopener noreferrer">YOUTUBE</a>
+        <a href="https://www.facebook.com/profile.php?id=100007481979029" class="link-btn large" target="_blank" rel="noopener noreferrer">FACEBOOK</a>
+        <a href="https://www.twitch.tv/jp_flexx" class="link-btn large" target="_blank" rel="noopener noreferrer">TWITCH</a>
+    </div>
+
+</div>
+
+</body>
+<footer style="text-align: center; padding: 20px; background-color: rgba(0, 0, 0, 0.5); color: #39ff14;">
+    <!-- Footer Image -->
+    <img src="../Assets/footer.png" alt="Footer Logo" style="max-width: 150px;">
+
+    <!-- Footer Text -->
+    <p>&copy; 2025 𝐉𝐏-𝐅𝐋𝐄𝐗.𝐜𝐨𝐦‌. All rights reserved.</p>
+</footer>
+
+
+</html>
