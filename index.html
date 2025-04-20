@@ -316,51 +316,52 @@
 <style>
 .hm-corner-image {
     position: fixed;
-    bottom: 50px;
-    left: 140px;
+    bottom: clamp(30px, 4vh, 50px);
+    left: clamp(80px, 10vw, 140px);
     width: clamp(250px, 25vw, 500px);
-    z-index: 1;
+    z-index: 2;
     pointer-events: none;
 }
 
 .hm-corner-image2 {
     position: fixed;
     bottom: 0;
-    right: 140px;
+    right: clamp(80px, 10vw, 140px);
     width: clamp(250px, 25vw, 500px);
-    z-index: 1;
+    z-index: 2;
     pointer-events: none;
 }
 
 .hm-corner-image3 {
     position: absolute;
-    top: -10px;
-    left: 420px;
-    width: clamp(160px, 16vw, 320px); /* scales with screen width */
+    top: clamp(-20px, -1vw, -10px);
+    left: clamp(240px, 22vw, 420px);
+    width: clamp(160px, 16vw, 320px);
     z-index: 1;
     pointer-events: none;
-    transform: rotate(290deg); /* 👈 Adjust angle here (negative = counterclockwise) */
+    transform: rotate(290deg);
 }
 
 .hm-corner-image4 {
     position: absolute;
-    bottom: 10px;
-    left: 370px;
-    width: clamp(250px, 25vw, 500px); /* scales with screen width */
+    bottom: clamp(0px, 1vh, 10px);
+    left: clamp(200px, 20vw, 370px);
+    width: clamp(250px, 25vw, 500px);
     z-index: 1;
     pointer-events: none;
-    transform: rotate(330deg); /* 👈 Adjust angle here (negative = counterclockwise) */
+    transform: rotate(330deg);
 }
 
 .hm-corner-image5 {
     position: absolute;
-    bottom: 10px;
-    right: 430px;
-    width: clamp(200px, 20vw, 400px); /* scales with screen width */
+    bottom: clamp(0px, 1vh, 10px);
+    right: clamp(200px, 22vw, 430px);
+    width: clamp(200px, 20vw, 400px);
     z-index: 1;
     pointer-events: none;
-    transform: rotate(30deg); /* 👈 Adjust angle here (negative = counterclockwise) */
+    transform: rotate(30deg);
 }
+
 </style>
 
 <img src="Assets/home1.png" class="hm-corner-image" alt="Decorative Corner">
