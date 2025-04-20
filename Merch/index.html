@@ -375,7 +375,7 @@ function zoomImage(img) {
     position: fixed;
     bottom: 0;
     left: 0;
-    width: clamp(350px, 35vw, 700px); /* scales with screen width */
+    width: clamp(370px, 37vw, 740px); /* scales with screen width */
     z-index: 1;
     pointer-events: none;
 }
@@ -383,8 +383,17 @@ function zoomImage(img) {
 .bg-corner-image2 {
     position: fixed;
     bottom: 0;
-    right: 0;
-    width: clamp(350px, 35vw, 700px); /* scales with screen width */
+    right: 140px;
+    width: clamp(230px, 23vw, 460px); /* scales with screen width */
+    z-index: 1;
+    pointer-events: none;
+}
+
+.bg-corner-image3 {
+    position: fixed;
+    top: 0;
+    right: 140px;
+    width: clamp(300px, 30vw, 600px); /* scales with screen width */
     z-index: 1;
     pointer-events: none;
 }
@@ -392,6 +401,7 @@ function zoomImage(img) {
 
 <img src="../Assets/merch1.png" class="bg-corner-image" alt="Decorative Corner">
 <img src="../Assets/merch2.png" class="bg-corner-image2" alt="Decorative Corner">
+<img src="../Assets/merch3.png" class="bg-corner-image3" alt="Decorative Corner">
 
 </body>
 <footer style="text-align: center; padding: 20px; background-color: rgba(0, 0, 0, 0.5); color: #39ff14;">
