@@ -31,6 +31,10 @@
     }
 }
 
+main {
+    flex: 1; /* This pushes footer to the bottom */
+}
+
 
 /* Popup styles */
 .popup-overlay {
@@ -222,7 +226,11 @@
     width: 175px;
     height: auto;
     margin-bottom: 20px;
+    border: 2px solid #39ff14; /* Neon green border */
+    box-shadow: 0 0 10px #39ff14, 0 0 20px #39ff14, 0 0 30px #39ff14; /* Neon glow */
+    border-radius: 8px; /* Optional: slightly rounded corners */
 }
+
 
 /* Discord Button Style (separated) */
 .discord-button {
@@ -371,14 +379,14 @@
 <img src="Assets/home5.png" class="hm-corner-image5" alt="Decorative Corner">
 
 </body>
-
-<footer style="text-align: center; padding: 20px; background-color: rgba(0, 0, 0, 0.5); color: #39ff14;">
+<footer style="text-align: center; padding: clamp(1rem, 2vw, 2rem); background-color: rgba(0, 0, 0, 0.5); color: #39ff14;">
     <!-- Footer Image -->
-    <img src="Assets/footer.png" alt="Footer Logo" style="max-width: 150px;">
+    <img src="Assets/footer.png" alt="Footer Logo" style="max-width: clamp(100px, 10vw, 150px);">
 
     <!-- Footer Text -->
-    <p>&copy; 2025 𝐉𝐏-𝐅𝐋𝐄𝐗.𝐜𝐨𝐦‌. All rights reserved.</p>
+    <p style="font-size: clamp(0.9rem, 1.2vw, 1.1rem); margin-top: 10px;">&copy; 2025 𝐉𝐏-𝐅𝐋𝐄𝐗.𝐜𝐨𝐦‌. All rights reserved.</p>
 </footer>
+
 
 
 </html>
