@@ -273,7 +273,7 @@ footer {
     font-size: 14px !important;
     white-space: nowrap;
     height: auto;
-    position: relative;
+    position: fixed;
     bottom: 0;
     left: 0;
     width: 100vw; /* Full viewport width */
@@ -301,7 +301,7 @@ footer p {
         text-align: center;
         white-space: normal; /* Allow text wrapping */
         height: auto;
-        position: relative;
+        position: fixed;
         bottom: 0;
         left: -10%;
         width: 100%; /* Full viewport width */
