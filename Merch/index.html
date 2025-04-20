@@ -375,14 +375,25 @@ function zoomImage(img) {
     position: fixed;
     bottom: 0;
     left: 0;
-    width: 700px;
-    z-index: 1; /* or higher than your background */
+    width: clamp(400px, 40vw, 800px); /* scales with screen width */
+    z-index: 1;
+    opacity: 0.97;
     pointer-events: none;
 }
 
+.bg-corner-image2 {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: clamp(300px, 30vw, 600px); /* scales with screen width */
+    z-index: 1;
+    opacity: 0.97;
+    pointer-events: none;
+}
 </style>
 
 <img src="../Assets/merch1.png" class="bg-corner-image" alt="Decorative Corner">
+<img src="../Assets/merch2.png" class="bg-corner-image2" alt="Decorative Corner">
 
 </body>
 <footer style="text-align: center; padding: 20px; background-color: rgba(0, 0, 0, 0.5); color: #39ff14;">
