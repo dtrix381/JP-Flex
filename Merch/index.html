@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../styles.css"> <!-- Link to your global styles -->
     <link rel="icon" href="../Assets/icon.png" type="image/png" />
     <link rel="apple-touch-icon" href="../Assets/icon.png">
-    
+
     <style>
         body {
             background: url('../Assets/background.png') no-repeat center center fixed;
@@ -31,10 +31,34 @@
     }
 }
 
+/* Back Button */
+.back-btn {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #39ff14;
+    padding: 10px 18px;
+    border: 2px solid #39ff14;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+.back-btn:hover {
+    background-color: #39ff14;
+    color: black;
+}
+
     </style>
 
 </head>
 <body>
+
+<!-- Back Button -->
+<a href="/" class="back-btn">Back to Home</a>
+
 
 <style>
 /* Outer Box */
