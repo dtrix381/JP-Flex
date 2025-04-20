@@ -331,10 +331,41 @@
     pointer-events: none;
 }
 
+.hm-corner-image3 {
+    position: fixed;
+    top: -10px;
+    left: 370px;
+    width: clamp(130px, 13vw, 260px); /* scales with screen width */
+    z-index: 1;
+    pointer-events: none;
+    transform: rotate(290deg); /* 👈 Adjust angle here (negative = counterclockwise) */
+}
+
+.hm-corner-image4 {
+    position: fixed;
+    bottom: 10px;
+    left: 370px;
+    width: clamp(130px, 13vw, 260px); /* scales with screen width */
+    z-index: 1;
+    pointer-events: none;
+    transform: rotate(330deg); /* 👈 Adjust angle here (negative = counterclockwise) */
+}
+
+.hm-corner-image5 {
+    position: fixed;
+    bottom: 10px;
+    right: 400px;
+    width: clamp(130px, 13vw, 260px); /* scales with screen width */
+    z-index: 1;
+    pointer-events: none;
+}
 </style>
 
 <img src="Assets/home1.png" class="hm-corner-image" alt="Decorative Corner">
 <img src="Assets/home2.png" class="hm-corner-image2" alt="Decorative Corner">
+<img src="Assets/home3.webp" class="hm-corner-image3" alt="Decorative Corner">
+<img src="Assets/home4.png" class="hm-corner-image4" alt="Decorative Corner">
+<img src="Assets/home5.png" class="hm-corner-image5" alt="Decorative Corner">
 
 </body>
 
