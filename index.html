@@ -214,6 +214,7 @@
     text-align: center;
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
     background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
 }
 
 /* Profile Image */
@@ -335,11 +336,11 @@
 .hm-corner-image3 {
     position: absolute;
     top: clamp(-20px, -1vw, -10px);
-    left: clamp(240px, 22vw, 420px);
+    left: clamp(260px, 24vw, 440px);
     width: clamp(160px, 16vw, 320px);
     z-index: 1;
     pointer-events: none;
-    transform: rotate(290deg);
+    transform: rotate(320deg);
 }
 
 .hm-corner-image4 {
@@ -357,9 +358,8 @@
     bottom: clamp(0px, 1vh, 10px);
     right: clamp(200px, 22vw, 430px);
     width: clamp(200px, 20vw, 400px);
-    z-index: 1;
+    z-index: 0;
     pointer-events: none;
-    transform: rotate(30deg);
 }
 
 </style>
