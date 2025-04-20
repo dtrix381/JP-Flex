@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="styles.css"> <!-- Link to your global styles -->
     <link rel="icon" href="Assets/icon.png" type="image/png" />
     <link rel="apple-touch-icon" href="Assets/icon.png">
-    
+
     <style>
         body {
             background: url('Assets/background.png') no-repeat center center fixed;
@@ -296,8 +296,10 @@
 
     <!-- Discord and Telegram Buttons Side-by-Side -->
     <div class="button-row">
-        <a href="https://discord.gg/PUkfEKfp2r" class="link-btn discord" target="_blank" rel="noopener noreferrer">DISCORD</a>
-        <a href="https://t.me/JP_FLEX" class="link-btn telegram" target="_blank" rel="noopener noreferrer">TELEGRAM</a>
+        <a href="https://discord.gg/PUkfEKfp2r" class="link-btn discord" target="_blank" rel="noopener noreferrer">
+		<img src="assets/Discord2.png" alt="Kick" width="50">DISCORD</a>
+        <a href="https://t.me/JP_FLEX" class="link-btn telegram" target="_blank" rel="noopener noreferrer">
+		<img src="assets/Telegram.png" alt="Kick" width="50">TELEGRAM</a>
     </div>
 
     <!-- Other Buttons -->
@@ -310,13 +312,32 @@
 </div>
 
 
+<style>
+.hm-corner-image {
+    position: fixed;
+    bottom: 50px;
+    left: 140px;
+    width: clamp(250px, 25vw, 500px);
+    z-index: 1;
+    pointer-events: none;
+}
 
+.hm-corner-image2 {
+    position: fixed;
+    bottom: 0;
+    right: 140px;
+    width: clamp(250px, 25vw, 500px);
+    z-index: 1;
+    pointer-events: none;
+}
 
+</style>
 
-
-
+<img src="Assets/home1.png" class="hm-corner-image" alt="Decorative Corner">
+<img src="Assets/home2.png" class="hm-corner-image2" alt="Decorative Corner">
 
 </body>
+
 <footer style="text-align: center; padding: 20px; background-color: rgba(0, 0, 0, 0.5); color: #39ff14;">
     <!-- Footer Image -->
     <img src="Assets/footer.png" alt="Footer Logo" style="max-width: 150px;">
