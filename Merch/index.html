@@ -31,25 +31,29 @@
     }
 }
 
+
 /* Back Button */
 .back-btn {
-    position: fixed;
-    top: 20px;
-    left: 20px;
+    position: absolute;
+    top: clamp(10px, 2vw, 20px);
+    left: clamp(10px, 2vw, 20px);
     background-color: rgba(0, 0, 0, 0.7);
     color: #39ff14;
-    padding: 10px 18px;
-    border: 2px solid #39ff14;
-    border-radius: 10px;
+    padding: clamp(6px, 1vw, 10px) clamp(12px, 2vw, 18px);
+    border: clamp(1px, 0.2vw, 2px) solid #39ff14;
+    border-radius: clamp(6px, 1vw, 10px);
     text-decoration: none;
     font-weight: bold;
+    font-size: clamp(0.8rem, 1vw, 1rem);
     transition: all 0.3s ease;
     z-index: 1000;
 }
+
 .back-btn:hover {
     background-color: #39ff14;
     color: black;
 }
+
 
     </style>
 
@@ -273,7 +277,7 @@
         <a href="https://your-merch-purchase-link.com" class="buy-btn" target="_blank" rel="noopener noreferrer">Buy Now</a>
 
         <!-- Item Description -->
-        <p></p><p>Kiwikingz JP-Flex T-shirt.</p>
+        <p></p><p>This premium quality t-shirt worthy of royalty fit for a King or Queen. Crafted from a robust and durable fabric, this shirt is designed for versatile wear. Unlike typical t-shirts, the neckline maintains its shape without curling. Additionally, the vibrant colors are skillfully integrated into the design. I sincerely hope you appreciate this JPFLEX merchandise as much as I do.</p>
 
         <!-- Size Selection -->
         <div class="size-selection">
@@ -446,14 +450,20 @@ function zoomImage(img) {
 <script id="dsq-count-scr" src="//jp-flex.disqus.com/count.js" async></script>
 </div>
 
+<p></p><p></p><p></p><p></p><p></p><p></p>
+<div style="height: 2300px;"><p style="color: transparent;">This text is invisible</p></div>
+
+
 </body>
-<footer style="text-align: center; padding: 20px; background-color: rgba(0, 0, 0, 0.5); color: #39ff14;">
+
+<footer style="text-align: center; padding: clamp(1rem, 2vw, 2rem); background-color: rgba(0, 0, 0, 0.5); color: #39ff14;">
     <!-- Footer Image -->
-    <img src="../Assets/footer.png" alt="Footer Logo" style="max-width: 150px;">
+    <img src="../Assets/footer.png" alt="Footer Logo" style="max-width: clamp(100px, 10vw, 150px);">
 
     <!-- Footer Text -->
-    <p>&copy; 2025 𝐉𝐏-𝐅𝐋𝐄𝐗.𝐜𝐨𝐦‌. All rights reserved.</p>
+    <p style="font-size: clamp(0.9rem, 1.2vw, 1.1rem); margin-top: 10px;">&copy; 2025 𝐉𝐏-𝐅𝐋𝐄𝐗.𝐜𝐨𝐦‌. All rights reserved.</p>
 </footer>
+
 
 
 </html>
