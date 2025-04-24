@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JP_Flex</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css"> <!-- Link to your global styles -->
+    <link rel="icon" href="../Assets/icon.png" type="image/png" />
+    <link rel="apple-touch-icon" href="../Assets/icon.png">
+
+    <style>
+        body {
+            background: url('../Assets/background.png') no-repeat center center fixed;
+            background-size: cover;
+            background-color: black; /* Fallback color */
+            color: white;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        @media (max-width: 768px) {
+    body {
+        background: url('../Assets/background.png') no-repeat;
+        background-size: auto 100vh; /* Full height, auto width */
+        background-position: -520px center; /* Shift image 30px to the left */
+    }
+}
+
+.back-btn {
+    position: absolute;
+    top: clamp(10px, 2vw, 20px);
+    left: clamp(10px, 2vw, 20px);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #39ff14;
+    padding: clamp(6px, 1vw, 10px) clamp(12px, 2vw, 18px);
+    border: clamp(1px, 0.2vw, 2px) solid #39ff14;
+    border-radius: clamp(6px, 1vw, 10px);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: clamp(0.8rem, 1vw, 1rem);
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.back-btn:hover {
+    background-color: #39ff14;
+    color: black;
+}
+
+
+    </style>
+
+</head>
+<body>
+<div style="max-width: 1366px; margin: 0 auto;">
+<!-- Back Button -->
+<a href="/" class="back-btn">Back to Home</a>
+
+<style>
+/* Outer Box */
+.outer-box {
+    border: clamp(2px, 0.3vw, 3px) solid #39ff14;
+    border-radius: clamp(20px, 3vw, 30px);
+    padding: clamp(10px, 2vw, 15px);
+    width: clamp(320px, 50vw, 600px);
+    margin: auto;
+    margin-top: clamp(20px, 4vw, 30px);
+    text-align: center;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+/* Casino Links Box */
+.casinolinks-box {
+    font-family: 'Bangers', sans-serif;
+    font-size: clamp(28px, 4vw, 48px);
+    color: #ffffff;
+    background: linear-gradient(145deg, #4e2a84, #7c4cc3);
+    border: clamp(2px, 0.3vw, 3px) solid #7c4cc3;
+    border-radius: clamp(25px, 4vw, 40px);
+    padding: clamp(12px, 2vw, 20px) clamp(30px, 6vw, 50px);
+    text-align: center;
+    margin: clamp(10px, 2vw, 20px) auto;
+    width: fit-content;
+    text-transform: uppercase;
+    letter-spacing: clamp(2px, 0.5vw, 4px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+    position: relative;
+    overflow: hidden;
+    z-index: 0;
+    transition: all 0.3s ease;
+}
+
+.casinolinks-box::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: rgba(255, 255, 255, 0.1);
+    transform: rotate(45deg);
+    z-index: -1;
+    animation: spin 3s linear infinite;
+}
+
+.casinolinks-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.6);
+}
+
+@keyframes spin {
+    0% { transform: rotate(45deg); }
+    50% { transform: rotate(135deg); }
+    100% { transform: rotate(225deg); }
+}
+
+/* Other Buttons in Column */
+.link-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(12px, 2vw, 20px);
+}
+
+/* Shared Button Style */
+.link-btn {
+    text-decoration: none;
+    background-color: #39ff14;
+    color: white;
+    padding: clamp(6px, 1vw, 10px) clamp(12px, 2vw, 20px);
+    border-radius: clamp(12px, 2vw, 20px);
+    font-size: clamp(16px, 2vw, 20px);
+    transition: 0.3s ease;
+}
+
+.link-btn:hover {
+    background-color: black;
+    border: clamp(2px, 0.3vw, 3px) solid #39ff14;
+}
+
+/* Make MERCH/CASINO/SOCIAL bigger */
+.link-btn.large {
+    padding: clamp(10px, 1.5vw, 18px) clamp(20px, 4vw, 40px);
+    font-size: clamp(18px, 2vw, 22px);
+}
+
+</style>
+
+<!-- Big Outer Container Box -->
+<div class="outer-box">
+
+    <!-- Casino Text Box (Replacing Image) -->
+    <div class="casinolinks-box">
+        DISCLAIMER
+    </div>
+
+    <!-- Other Buttons -->
+    <div class="link-buttons">
+        <a>It is important to know the Casino always wins in the long run please practice responsible gambling. Setting limits, staying in control, and playing safely are all great ways to ensure that you have a positive and enjoyable experience. Remember to always gamble responsibly and seek help if you need it.</a>
+        <a href="https://www.gamblinghelponline.org.au" target="_blank" rel="noopener noreferrer">https://www.gamblinghelponline.org.au</a>
+        <a href="https://gamblinghelpline.co.nz/" target="_blank" rel="noopener noreferrer">https://gamblinghelpline.co.nz/</a>
+        <a href="https://www.responsiblegambling.org/" target="_blank" rel="noopener noreferrer">https://www.responsiblegambling.org/</a>
+        <a href="https://www.begambleaware.org/" target="_blank" rel="noopener noreferrer">https://www.begambleaware.org/</a>
+    </div>
+
+</div>
+
+
+</div>
+</body>
+
+
+
+<footer style="text-align: center; padding: clamp(1rem, 2vw, 2rem); background-color: rgba(0, 0, 0, 0.5); color: #39ff14;">
+    <!-- Footer Image -->
+    <img src="../Assets/footer.png" alt="Footer Logo" style="max-width: clamp(100px, 10vw, 150px); z-index: 5;">
+
+    <!-- Footer Text -->
+    <p style="font-size: clamp(0.9rem, 1.2vw, 1.1rem); margin-top: 10px; z-index: 5;">&copy; 2025 𝐉𝐏-𝐅𝐋𝐄𝐗.𝐜𝐨𝐦‌. All rights reserved.</p>
+</footer>
+
+
+
+</html>
