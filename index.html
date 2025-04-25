@@ -31,8 +31,8 @@
     }
 }
 
-main {
-    flex: 1; /* This pushes footer to the bottom */
+main, .content {
+    padding-bottom: 150px; /* Make this a bit more than the footer height */
 }
 
 
@@ -167,7 +167,7 @@ main {
 
 </head>
 <body>
- 
+<main style="padding-bottom: 150px;"> 
 
     <!-- Age Verification Popup -->
     <div id="age-popup" class="popup-overlay">
@@ -379,6 +379,7 @@ main {
 <img src="Assets/home4.png" class="hm-corner-image4" alt="Decorative Corner">
 <img src="Assets/home5.png" class="hm-corner-image5" alt="Decorative Corner">
 
+</main>
 </body>
 <footer style="text-align: center; padding: clamp(1rem, 2vw, 2rem); background-color: rgba(0, 0, 0, 0.5); color: #39ff14;">
     <!-- Footer Image -->
