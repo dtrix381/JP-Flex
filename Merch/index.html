@@ -174,6 +174,73 @@
     border: 3px solid #7c4cc3;
 }
 
+/* The Modal */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100vw;
+            height: 100vh;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.7); /* Black background with opacity */
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Modal Content */
+        .modal-content {
+            background-color: #111;
+            padding: 20px;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+            color: white;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.9);}
+            to { opacity: 1; transform: scale(1);}
+        }
+
+        .modal-content img {
+            width: 50px;
+            height: 50px;
+            object-fit: contain;
+            margin-bottom: 10px;
+        }
+
+        .modal-content a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 10px 0;
+            background-color: #222;
+            padding: 10px;
+            border-radius: 8px;
+            color: #39ff14;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.2s;
+        }
+
+        .modal-content a:hover {
+            background-color: #333;
+        }
+
+        .close-btn {
+            margin-top: 20px;
+            background: red;
+            padding: 8px 20px;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+        }
+
 /* Size Selection */
 .size-selection {
     display: flex;
@@ -274,7 +341,52 @@
 </div>
 
         <!-- Buy Button -->
-        <a href="https://your-merch-purchase-link.com" class="buy-btn" target="_blank" rel="noopener noreferrer">Buy Now</a>
+<a href="#" class="buy-btn" id="openModalBtn">Buy Now</a>
+
+<!-- Modal -->
+<div id="buyModal" class="modal">
+    <div class="modal-content">
+        <h2>Contact Us</h2>
+
+        <a href="https://www.facebook.com/profile.php?id=100007481979029" target="_blank" rel="noopener noreferrer">
+            <img src="../Assets/Facebook.png" alt="Facebook Icon">
+            Message me on Facebook
+        </a>
+
+        <a href="https://www.instagram.com/_jpflex" target="_blank" rel="noopener noreferrer">
+            <img src="../Assets/Instagram.png" alt="Instagram Icon">
+            Message me on Instagram
+        </a>
+
+        <a href="https://discord.gg/NTaRe8PYPC" target="_blank" rel="noopener noreferrer">
+            <img src="../Assets/discord.webp" alt="Discord Icon">
+             Open a Ticket on Discord
+        </a>
+
+        <button class="close-btn" id="closeModalBtn">Close</button>
+    </div>
+</div>
+
+<script>
+    // Open modal
+    document.getElementById('openModalBtn').addEventListener('click', function(e) {
+        e.preventDefault(); // Prevent default link behavior
+        document.getElementById('buyModal').style.display = 'flex';
+    });
+
+    // Close modal
+    document.getElementById('closeModalBtn').addEventListener('click', function() {
+        document.getElementById('buyModal').style.display = 'none';
+    });
+
+    // Also close modal if click outside the box
+    window.addEventListener('click', function(event) {
+        const modal = document.getElementById('buyModal');
+        if (event.target === modal) {
+            modal.style.display = 'none';
+        }
+    });
+</script>
 
         <!-- Item Description -->
         <p></p><p>This premium quality t-shirt worthy of royalty fit for a King or Queen. Crafted from a robust and durable fabric, this shirt is designed for versatile wear. Unlike typical t-shirts, the neckline maintains its shape without curling. Additionally, the vibrant colors are skillfully integrated into the design. I sincerely hope you appreciate this JPFLEX merchandise as much as I do.</p>
