@@ -23,12 +23,23 @@
             justify-content: space-between;
         }
 
-        @media (max-width: 768px) {
+	@media (max-width: 768px) {
     body {
-        background: url('Assets/background.png') no-repeat;
-        background-size: auto 100vh; /* Full height, auto width */
-        background-position: -520px center; /* Shift image 30px to the left */
+        background: url('Assets/background.png') no-repeat center center; /* Centered */
+        background-size: cover; /* Cover the entire screen without overflow */
+        background-attachment: fixed; /* Optional: make background fixed */
+        background-position: center center; /* Center it both ways */
+        overflow-x: hidden; /* Prevent side scrolling */
+        margin: 0;
+        padding: 0;
     }
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
 }
 
 main, .content {
@@ -143,9 +154,10 @@ main, .content {
 /* Mobile version adjustments */
 @media (max-width: 768px) {
     .popup-box {
-    width: 60%;  /* Ensures popup box width is relative to screen size */
-    max-width: 420px;  /* Still limits the width to a max size on larger screens */
+    width: 50%;  /* Ensures popup box width is relative to screen size */
+    max-width: 320px;  /* Still limits the width to a max size on larger screens */
     margin: 0 auto;  /* Centers the popup box */
+    transform: translate(-50%, -50%); /* Center both vertically and horizontally */
 }
 
     .popup-box h2 {
@@ -293,6 +305,29 @@ main, .content {
     font-size: 22px;
 }
 
+/* 📱 Mobile version adjustments */
+@media (max-width: 768px) {
+    .outer-box {
+        width: 90%;
+        padding: 20px;
+        margin-top: 30px;
+    }
+
+    .profile-logo {
+        width: 70%;
+        max-width: 150px;
+    }
+
+    .link-btn, .link-btn.large {
+        font-size: 18px;
+        padding: 12px 24px;
+    }
+
+    .button-row {
+        flex-direction: column;
+        align-items: center;
+    }
+}
 
 </style>
 
@@ -371,6 +406,15 @@ main, .content {
     pointer-events: none;
 }
 
+@media (max-width: 768px) {
+    .hm-corner-image,
+    .hm-corner-image2,
+    .hm-corner-image3,
+    .hm-corner-image4,
+    .hm-corner-image5 {
+        display: none;
+    }
+}
 </style>
 
 <img src="Assets/home1.png" class="hm-corner-image" alt="Decorative Corner">
@@ -381,6 +425,7 @@ main, .content {
 
 </main>
 </body>
+
 <footer style="text-align: center; padding: clamp(1rem, 2vw, 2rem); background-color: rgba(0, 0, 0, 0.5); color: #39ff14;">
     <!-- Footer Image -->
     <img src="Assets/footer.png" alt="Footer Logo" style="max-width: clamp(100px, 10vw, 150px);">
