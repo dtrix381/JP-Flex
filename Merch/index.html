@@ -26,29 +26,44 @@
         @media (max-width: 768px) {
     body {
         background: url('../Assets/background.png') no-repeat;
-        background-size: auto 100vh; /* Full height, auto width */
-        background-position: -520px center; /* Shift image 30px to the left */
+        background-size: cover; /* Cover the entire screen without overflow */
+        background-attachment: fixed; /* Optional: make background fixed */
+        background-position: center center; /* Center it both ways */
+        overflow-x: hidden; /* Prevent side scrolling */
+        margin: 0;
+        padding: 0;
     }
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
 }
 
 
 /* Back Button */
 .back-btn {
-    position: absolute;
-    top: clamp(10px, 2vw, 20px);
-    left: clamp(10px, 2vw, 20px);
+    position: fixed;
+    top: clamp(8px, 2vw, 16px);
+    left: clamp(8px, 2vw, 16px);
     background-color: rgba(0, 0, 0, 0.7);
     color: #39ff14;
-    padding: clamp(6px, 1vw, 10px) clamp(12px, 2vw, 18px);
+    padding: clamp(6px, 1vw, 10px) clamp(10px, 3vw, 18px);
     border: clamp(1px, 0.2vw, 2px) solid #39ff14;
-    border-radius: clamp(6px, 1vw, 10px);
+    border-radius: clamp(6px, 2vw, 12px);
     text-decoration: none;
     font-weight: bold;
-    font-size: clamp(0.8rem, 1vw, 1rem);
+    font-size: clamp(0.8rem, 1.2vw, 1rem);
     transition: all 0.3s ease;
     z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
+/* Hover effect */
 .back-btn:hover {
     background-color: #39ff14;
     color: black;
@@ -319,6 +334,67 @@
 .lightbox-arrow.right {
     right: 30px;
 }
+
+/* Mobile Responsive Tweaks */
+@media (max-width: 768px) {
+    .outer-box {
+        width: clamp(300px, 90%, 600px);
+        padding: clamp(10px, 4vw, 20px);
+        margin-top: clamp(40px, 20vw, 50px);
+    }
+
+    .merch-box {
+        font-size: clamp(24px, 8vw, 48px);
+        padding: clamp(10px, 5vw, 20px) clamp(20px, 8vw, 50px);
+        border-radius: clamp(20px, 6vw, 40px);
+        letter-spacing: clamp(2px, 0.5vw, 4px);
+    }
+
+    .item-box {
+        padding: clamp(10px, 4vw, 20px);
+        border-radius: clamp(10px, 4vw, 20px);
+    }
+
+    .item-image-box {
+        height: clamp(180px, 40vw, 300px);
+    }
+
+    .buy-btn {
+        font-size: clamp(16px, 5vw, 24px);
+        padding: clamp(8px, 3vw, 10px) clamp(15px, 5vw, 20px);
+        border-radius: clamp(6px, 3vw, 10px);
+    }
+
+    .modal-content {
+        padding: clamp(10px, 5vw, 20px);
+        max-width: 90%;
+    }
+
+    .modal-content img {
+        width: clamp(30px, 8vw, 50px);
+        height: clamp(30px, 8vw, 50px);
+    }
+
+    .size-selection {
+        flex-wrap: wrap;
+    }
+
+    .size-selection .size-box {
+        font-size: clamp(12px, 4vw, 16px);
+        padding: clamp(6px, 2vw, 10px) clamp(10px, 4vw, 20px);
+        margin: 5px;
+    }
+
+    .coming-soon {
+        font-size: clamp(18px, 6vw, 24px);
+        padding: clamp(10px, 5vw, 20px);
+    }
+
+    .lightbox-arrow {
+        font-size: clamp(2rem, 6vw, 3rem);
+        padding: clamp(8px, 3vw, 10px);
+    }
+}
 </style>
 
 <!-- Big Outer Container Box -->
@@ -513,6 +589,14 @@ function zoomImage(img) {
     z-index: 1;
     pointer-events: none;
 }
+
+@media (max-width: 768px) {
+    .bg-corner-image,
+    .bg-corner-image2,
+    .bg-corner-image3{
+        display: none;
+    }
+}
 </style>
 
 <img src="../Assets/merch1.png" class="bg-corner-image" alt="Decorative Corner">
@@ -539,6 +623,21 @@ function zoomImage(img) {
     color: #00ffc3;
     margin-bottom: 1rem;
   }
+
+/* Mobile Tweaks for Disqus */
+@media (max-width: 768px) {
+  .disqus-container {
+    width: clamp(250px, 90%, 600px);
+    padding: clamp(0.5rem, 4vw, 1.5rem);
+    border-radius: clamp(0.5rem, 3vw, 1rem);
+    margin: clamp(1rem, 5vw, 2rem) auto;
+  }
+
+  .disqus-heading {
+    font-size: clamp(1.25rem, 6vw, 2rem);
+    margin-bottom: clamp(0.5rem, 4vw, 1rem);
+  }
+}
 </style>
 
 <div class="disqus-container">
