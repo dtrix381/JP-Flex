@@ -26,31 +26,49 @@
         @media (max-width: 768px) {
     body {
         background: url('../Assets/background.png') no-repeat;
-        background-size: auto 100vh; /* Full height, auto width */
-        background-position: -520px center; /* Shift image 30px to the left */
+        background-size: cover; /* Cover the entire screen without overflow */
+        background-attachment: fixed; /* Optional: make background fixed */
+        background-position: center center; /* Center it both ways */
+        overflow-x: hidden; /* Prevent side scrolling */
+        margin: 0;
+        padding: 0;
     }
 }
 
-.back-btn {
-    position: absolute;
-    top: clamp(10px, 2vw, 20px);
-    left: clamp(10px, 2vw, 20px);
-    background-color: rgba(0, 0, 0, 0.7);
-    color: #39ff14;
-    padding: clamp(6px, 1vw, 10px) clamp(12px, 2vw, 18px);
-    border: clamp(1px, 0.2vw, 2px) solid #39ff14;
-    border-radius: clamp(6px, 1vw, 10px);
-    text-decoration: none;
-    font-weight: bold;
-    font-size: clamp(0.8rem, 1vw, 1rem);
-    transition: all 0.3s ease;
-    z-index: 1000;
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
 }
 
+
+/* Back Button */
+.back-btn {
+    position: fixed;
+    top: clamp(8px, 2vw, 16px);
+    left: clamp(8px, 2vw, 16px);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #39ff14;
+    padding: clamp(6px, 1vw, 10px) clamp(10px, 3vw, 18px);
+    border: clamp(1px, 0.2vw, 2px) solid #39ff14;
+    border-radius: clamp(6px, 2vw, 12px);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: clamp(0.8rem, 1.2vw, 1rem);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Hover effect */
 .back-btn:hover {
     background-color: #39ff14;
     color: black;
 }
+
 
 
     </style>
@@ -128,26 +146,27 @@
     gap: clamp(12px, 2vw, 20px);
 }
 
-/* Shared Button Style */
-.link-btn {
-    text-decoration: none;
-    background-color: #39ff14;
-    color: white;
-    padding: clamp(6px, 1vw, 10px) clamp(12px, 2vw, 20px);
-    border-radius: clamp(12px, 2vw, 20px);
-    font-size: clamp(16px, 2vw, 20px);
-    transition: 0.3s ease;
-}
+@media (max-width: 768px) {
+  .outer-box {
+      border: clamp(1px, 0.6vw, 2px) solid #39ff14;
+      border-radius: clamp(14px, 4vw, 20px);
+      padding: clamp(8px, 4vw, 12px);
+      width: clamp(250px, 90vw, 340px);
+      margin-top: clamp(52px, 15vw, 72px);
+  }
 
-.link-btn:hover {
-    background-color: black;
-    border: clamp(2px, 0.3vw, 3px) solid #39ff14;
-}
+  .casinolinks-box {
+      font-size: clamp(20px, 6vw, 32px);
+      border: clamp(1px, 0.6vw, 2px) solid #7c4cc3;
+      border-radius: clamp(20px, 5vw, 30px);
+      padding: clamp(10px, 4vw, 16px) clamp(20px, 6vw, 32px);
+      margin: clamp(8px, 4vw, 16px) auto;
+      letter-spacing: clamp(1px, 1vw, 2px);
+  }
 
-/* Make MERCH/CASINO/SOCIAL bigger */
-.link-btn.large {
-    padding: clamp(10px, 1.5vw, 18px) clamp(20px, 4vw, 40px);
-    font-size: clamp(18px, 2vw, 22px);
+  .link-buttons {
+      gap: clamp(8px, 3vw, 16px);
+  }
 }
 
 </style>
