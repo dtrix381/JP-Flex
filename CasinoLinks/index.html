@@ -26,27 +26,44 @@
         @media (max-width: 768px) {
     body {
         background: url('../Assets/background.png') no-repeat;
-        background-size: auto 100vh; /* Full height, auto width */
-        background-position: -520px center; /* Shift image 30px to the left */
+        background-size: cover; /* Cover the entire screen without overflow */
+        background-attachment: fixed; /* Optional: make background fixed */
+        background-position: center center; /* Center it both ways */
+        overflow-x: hidden; /* Prevent side scrolling */
+        margin: 0;
+        padding: 0;
     }
 }
 
-.back-btn {
-    position: absolute;
-    top: clamp(10px, 2vw, 20px);
-    left: clamp(10px, 2vw, 20px);
-    background-color: rgba(0, 0, 0, 0.7);
-    color: #39ff14;
-    padding: clamp(6px, 1vw, 10px) clamp(12px, 2vw, 18px);
-    border: clamp(1px, 0.2vw, 2px) solid #39ff14;
-    border-radius: clamp(6px, 1vw, 10px);
-    text-decoration: none;
-    font-weight: bold;
-    font-size: clamp(0.8rem, 1vw, 1rem);
-    transition: all 0.3s ease;
-    z-index: 1000;
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
 }
 
+
+/* Back Button */
+.back-btn {
+    position: fixed;
+    top: clamp(8px, 2vw, 16px);
+    left: clamp(8px, 2vw, 16px);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #39ff14;
+    padding: clamp(6px, 1vw, 10px) clamp(10px, 3vw, 18px);
+    border: clamp(1px, 0.2vw, 2px) solid #39ff14;
+    border-radius: clamp(6px, 2vw, 12px);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: clamp(0.8rem, 1.2vw, 1rem);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Hover effect */
 .back-btn:hover {
     background-color: #39ff14;
     color: black;
@@ -150,6 +167,38 @@
     font-size: clamp(18px, 2vw, 22px);
 }
 
+
+@media screen and (max-width: 768px) {
+  .outer-box {
+    border: clamp(2px, 1vw, 4px) solid #39ff14;
+    border-radius: clamp(15px, 4vw, 25px);
+    padding: clamp(8px, 3vw, 16px);
+    width: clamp(250px, 90vw, 100%);
+    margin-top: clamp(55px, 10vw, 75px);
+  }
+
+  .casinolinks-box {
+    font-size: clamp(24px, 6vw, 36px);
+    border-radius: clamp(20px, 5vw, 30px);
+    padding: clamp(10px, 3vw, 16px) clamp(20px, 8vw, 40px);
+    letter-spacing: clamp(1px, 1vw, 3px);
+  }
+
+  .link-buttons {
+    gap: clamp(10px, 4vw, 20px);
+  }
+
+  .link-btn {
+    padding: clamp(6px, 2vw, 12px) clamp(10px, 5vw, 20px);
+    font-size: clamp(14px, 4vw, 18px);
+  }
+
+  .link-btn.large {
+    padding: clamp(8px, 3vw, 14px) clamp(16px, 6vw, 32px);
+    font-size: clamp(16px, 5vw, 20px);
+  }
+}
+
 </style>
 
 <!-- Big Outer Container Box -->
@@ -225,6 +274,27 @@
     border-radius: 0.5rem;
     cursor: pointer;
   }
+
+@media screen and (max-width: 768px) {
+  .popup-content {
+    padding: clamp(1rem, 5vw, 2rem);
+    border-radius: clamp(0.5rem, 4vw, 1rem);
+    width: clamp(260px, 90vw, 360px);
+  }
+
+  .popup-content input {
+    padding: clamp(0.4rem, 2vw, 0.6rem);
+    margin: clamp(0.8rem, 3vw, 1rem) 0;
+    font-size: clamp(0.9rem, 4vw, 1rem);
+  }
+
+  .popup-content button {
+    margin: clamp(0.4rem, 2vw, 0.6rem);
+    padding: clamp(0.4rem, 2vw, 0.6rem) clamp(0.8rem, 4vw, 1rem);
+    font-size: clamp(0.9rem, 4vw, 1rem);
+  }
+}
+
 </style>
 
 <!-- JavaScript -->
