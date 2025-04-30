@@ -161,14 +161,91 @@
     </div>
 
     <!-- Other Buttons -->
-    <div class="link-buttons">
-        <a href="https://go.aff.freespinz.com/JPFLEX/" class="link-btn large" target="_blank" rel="noopener noreferrer">
-		<img src="../Assets/freespinz.png" alt="Kick" width="70">Freespinz</a>
-        <a href="https://bit.ly/JPFlexxKingmaker/" class="link-btn large" target="_blank" rel="noopener noreferrer">
-		<img src="../Assets/Kingmaker.png" alt="Kick" width="90"> Kingmaker</a>
-        <a href="https://gamdom.com/r/bigbass" class="link-btn large" target="_blank" rel="noopener noreferrer">
-		<img src="../Assets/Gamdom.png" alt="Kick" width="30"> Gamdom</a>
-    </div>
+<div class="link-buttons">
+  <a href="https://go.aff.freespinz.com/JPFLEX/" class="link-btn large" target="_blank" rel="noopener noreferrer">
+    <img src="../Assets/freespinz.png" alt="Kick" width="70"> Freespinz</a>
+
+  <!-- Kingmaker opens a popup instead -->
+  <button class="link-btn large" onclick="openPopup()" style="cursor: pointer;">
+    <img src="../Assets/Kingmaker.png" alt="Kick" width="90"> Kingmaker
+  </button>
+
+  <a href="https://gamdom.com/r/bigbass" class="link-btn large" target="_blank" rel="noopener noreferrer">
+    <img src="../Assets/Gamdom.png" alt="Kick" width="30"> Gamdom</a>
+</div>
+
+<!-- Popup for Kingmaker -->
+<div id="popupModal" class="popup-modal">
+  <div class="popup-content">
+    <h2>Copy Link Below</h2>
+    <input type="text" id="copyLinkInput" value="https://bit.ly/JPFlexxKingmaker/" readonly>
+    <button onclick="copyLink()">Copy Link</button>
+    <button onclick="closePopup()">Close</button>
+  </div>
+</div>
+
+<!-- CSS -->
+<style>
+  .popup-modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.6);
+    justify-content: center;
+    align-items: center;
+  }
+
+  .popup-content {
+    background: #1e1e1e;
+    color: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    text-align: center;
+    width: clamp(300px, 80%, 500px);
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+  }
+
+  .popup-content input {
+    width: 100%;
+    padding: 0.5rem;
+    margin: 1rem 0;
+    font-size: 1rem;
+    border: none;
+    border-radius: 0.5rem;
+  }
+
+  .popup-content button {
+    margin: 0.5rem;
+    padding: 0.5rem 1rem;
+    font-weight: bold;
+    background-color: #00ffc3;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+  }
+</style>
+
+<!-- JavaScript -->
+<script>
+  function openPopup() {
+    document.getElementById("popupModal").style.display = "flex";
+  }
+
+  function closePopup() {
+    document.getElementById("popupModal").style.display = "none";
+  }
+
+  function copyLink() {
+    const input = document.getElementById("copyLinkInput");
+    input.select();
+    input.setSelectionRange(0, 99999); // For mobile
+    document.execCommand("copy");
+    alert("Link copied to clipboard!");
+  }
+</script>
+
 
 </div>
 
