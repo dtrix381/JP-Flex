@@ -26,30 +26,49 @@
         @media (max-width: 768px) {
     body {
         background: url('../Assets/background.png') no-repeat;
-        background-size: auto 100vh; /* Full height, auto width */
-        background-position: -520px center; /* Shift image 30px to the left */
+        background-size: cover; /* Cover the entire screen without overflow */
+        background-attachment: fixed; /* Optional: make background fixed */
+        background-position: center center; /* Center it both ways */
+        overflow-x: hidden; /* Prevent side scrolling */
+        margin: 0;
+        padding: 0;
     }
 }
 
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+
 /* Back Button */
 .back-btn {
-    position: absolute;
-    top: 20px;
-    left: 20px;
+    position: fixed;
+    top: clamp(8px, 2vw, 16px);
+    left: clamp(8px, 2vw, 16px);
     background-color: rgba(0, 0, 0, 0.7);
     color: #39ff14;
-    padding: 10px 18px;
-    border: 2px solid #39ff14;
-    border-radius: 10px;
+    padding: clamp(6px, 1vw, 10px) clamp(10px, 3vw, 18px);
+    border: clamp(1px, 0.2vw, 2px) solid #39ff14;
+    border-radius: clamp(6px, 2vw, 12px);
     text-decoration: none;
     font-weight: bold;
+    font-size: clamp(0.8rem, 1.2vw, 1rem);
     transition: all 0.3s ease;
     z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
+/* Hover effect */
 .back-btn:hover {
     background-color: #39ff14;
     color: black;
 }
+
 
     </style>
 
@@ -147,6 +166,41 @@
     width: 100%;  /* Optional: Ensures full width in flex context */
     text-align: center; /* Center the text */
 }
+
+
+@media screen and (max-width: 768px) {
+  .outer-box {
+    border: clamp(2px, 0.5vw, 3px) solid #39ff14;
+    border-radius: clamp(20px, 5vw, 30px);
+    padding: clamp(10px, 4vw, 15px);
+    width: clamp(280px, 90vw, 360px);
+    margin-top: clamp(60px, 15vw, 80px);
+  }
+
+  .social-box {
+    font-size: clamp(28px, 6vw, 36px);
+    border-radius: clamp(20px, 6vw, 40px);
+    padding: clamp(12px, 4vw, 20px) clamp(24px, 6vw, 50px);
+    letter-spacing: clamp(2px, 1vw, 4px);
+  }
+
+  .link-buttons {
+    gap: clamp(12px, 3vw, 20px);
+  }
+
+  .link-btn {
+    padding: clamp(6px, 2vw, 10px) clamp(12px, 4vw, 20px);
+    font-size: clamp(16px, 5vw, 20px);
+    border-radius: clamp(12px, 4vw, 20px);
+  }
+
+  .link-btn.large {
+    padding: clamp(10px, 3vw, 18px) clamp(20px, 6vw, 40px);
+    font-size: clamp(18px, 5vw, 22px);
+  }
+}
+
+
 </style>
 
 <!-- Big Outer Container Box -->
@@ -188,14 +242,14 @@
 </div>
 
 </body>
-<footer style="text-align: center; padding: 20px; background-color: rgba(0, 0, 0, 0.5); color: #39ff14;">
+<footer style="text-align: center; padding: clamp(1rem, 2vw, 2rem); background-color: rgba(0, 0, 0, 0.5); color: #39ff14;">
     <!-- Footer Image -->
-    <img src="../Assets/footer.png" alt="Footer Logo" style="max-width: 150px;">
+    <img src="../Assets/footer.png" alt="Footer Logo" style="max-width: clamp(100px, 10vw, 150px);">
 
     <!-- Footer Text -->
-    <p>&copy; 2025 𝐉𝐏-𝐅𝐋𝐄𝐗.𝐜𝐨𝐦‌. All rights reserved.</p>
+    <p style="font-size: clamp(0.9rem, 1.2vw, 1.1rem); margin-top: 10px;">&copy; 2025 𝐉𝐏-𝐅𝐋𝐄𝐗.𝐜𝐨𝐦‌. All rights reserved.</p>
 </footer>
 
 
-</html>
 
+</html>
