@@ -303,7 +303,7 @@ footer p {
         height: auto;
         position: fixed;
         bottom: 0;
-        left: -10%;
+        left: -5%;
         width: 100%; /* Full viewport width */
         min-width: 110vw; /* Ensure no gaps */
     }
